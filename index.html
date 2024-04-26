@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket IO</title>
+</head>
+
+<body>
+    <center>
+        <input type="text" id="name">
+        <button onclick="send()" id="send">Send</button>
+    </center>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const send = () => {
+            const name = document.getElementById('name').value;
+            socket.send(`User Name is: ${name}`);
+        }
+    </script>
+
+</body>
+
+</html>
