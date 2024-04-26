@@ -11,7 +11,14 @@ httpServer.listen(PORT, () => {
 
 io.on('connect', (socket) => { 
     console.log(`Connected, socket id is: ${socket.id}`);
-    socket.on('message', (name) => { 
+
+     ///===>Pre-defined Method<===///
+    // socket.on('message', (name) => { 
+    //     console.log(name);
+    // })
+
+    ///===>Custom Method<===/// 
+     socket.on('myMsg', (name) => { 
         console.log(name);
     })
 })

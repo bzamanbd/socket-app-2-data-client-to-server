@@ -18,8 +18,15 @@
         const socket = io();
         const send = () => {
             const name = document.getElementById('name').value;
-            socket.send(`User Name is: ${name}`);
+
+            ///===>Pre-defined Method<===///
+            // socket.send(`User Name is: ${name}`);
+
+            socket.emit('myMsg', `User Name is : ${name}`)
+            ///===>Custom Method<===/// 
         }
+
+
     </script>
 
 </body>
